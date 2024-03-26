@@ -18,8 +18,10 @@ export default async function Page() {
   }
 
   return (
-    <>
+    <section className="text-center mt-6">
       <p>Dashboard</p>
-    </>
+      {user && <p>Hi, {user.user_metadata.full_name}. How are you today?</p>}
+      {user && <p>Your email: {user.email}</p>}
+    </section>
   );
 }
