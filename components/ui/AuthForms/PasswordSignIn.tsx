@@ -35,7 +35,9 @@ export default function PasswordSignIn({
       >
         <div className="grid gap-2">
           <div className="grid gap-1">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="text-black">
+              Email
+            </label>
             <input
               id="email"
               placeholder="name@example.com"
@@ -67,19 +69,25 @@ export default function PasswordSignIn({
         </div>
       </form>
       <p>
-        <Link href="/signin/forgot_password" className="font-light text-sm">
+        <Link
+          href="/signin/forgot_password"
+          className="font-light text-sm text-black"
+        >
           Forgot your password?
         </Link>
       </p>
       {allowEmail && (
         <p>
-          <Link href="/signin/email_signin" className="font-light text-sm">
+          <Link
+            href="/signin/email_signin"
+            className="font-light text-sm text-black"
+          >
             Sign in via magic link
           </Link>
         </p>
       )}
       <p>
-        <Link href="/signin/signup" className="font-light text-sm">
+        <Link href="/signin/signup" className="font-light text-sm text-black">
           Don't have an account? Sign up
         </Link>
       </p>
