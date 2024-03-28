@@ -104,13 +104,13 @@ export default function Pricing({ user, products, subscription }: Props) {
     );
   } else {
     return (
-      <section className="bg-black">
+      <section className="bg-white ">
         <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
           <div className="sm:flex sm:flex-col sm:align-center">
-            <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
+            <h1 className="text-4xl font-extrabold text-black sm:text-center sm:text-6xl">
               Pricing Plans
             </h1>
-            <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
+            <p className="max-w-2xl m-auto mt-5 text-xl text-black sm:text-center sm:text-2xl">
               Start building for free, then add a site plan to go live. Account
               plans unlock additional features.
             </p>
@@ -196,7 +196,7 @@ export default function Pricing({ user, products, subscription }: Props) {
               );
             })}
           </div>
-          <LogoCloud />
+          {/* <LogoCloud /> */}
         </div>
       </section>
     );
