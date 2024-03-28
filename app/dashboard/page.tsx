@@ -19,7 +19,7 @@ export default async function Page() {
   }
 
   return (
-    <section className="flex mt-6 text-black">
+    <section className="flex text-center mt-6 text-black">
       {/* Add flex here to work */}
       <Sidebar />
       <div className="ml-5">
