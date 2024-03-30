@@ -44,7 +44,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 );
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="flex">
@@ -98,7 +98,7 @@ const Sidebar = () => {
               isOpen={isOpen}
               icon={<Settings />}
               label="Settings"
-              path="/account"
+              path="/dashboard/settings"
             />
           </div>
         </nav>
