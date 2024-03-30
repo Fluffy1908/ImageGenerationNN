@@ -32,14 +32,28 @@ export default async function Page() {
   }
   ``;
 
+  console.log(user);
+
   return (
-    <section className="flex">
+    <section className="flex min-h-screen text-center">
       <Sidebar />
-      <div className="text-black">
-        <img src={user.user_metadata.avatar_url} alt="Avatar" />
-        <p>Your name: {user.user_metadata.full_name} </p>
-        <NameForm user={user} />
-        <p>Email: {user.email}</p>
+      <div className="flex-1 p-8">
+        <div className="flex flex-col items-center space-y-6">
+          <img
+            src={user.user_metadata.avatar_url}
+            alt="Avatar"
+            className="w-24 h-24 rounded-full object-cover"
+          />
+          <div className="text-lg font-semibold">
+            <p className="text-black">
+              Your name: {user.user_metadata.full_name}
+            </p>
+          </div>
+          <NameForm userName={user.user_metadata.full_name} />
+          <div className="text-lg">
+            <p className="text-black ">Email: {user.email}</p>
+          </div>
+        </div>
       </div>
     </section>
   );
