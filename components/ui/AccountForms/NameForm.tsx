@@ -31,14 +31,14 @@ export default function NameForm({ userName }: { userName: string }) {
   return (
     <div>
       <p
-        className="text-gray-400 underline cursor-pointer"
+        className="text-blue-600 hover:text-blue-800 underline cursor-pointer"
         onClick={handleShowButtonPress}
       >
         {isShowButtonPressed ? 'Cancel' : 'Do you want to change your name?'}
       </p>
       {isShowButtonPressed && (
         <Card
-          title="Your Name"
+          title=""
           description="Please enter your full name, or a display name you are comfortable with."
           footer={
             <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
@@ -59,7 +59,7 @@ export default function NameForm({ userName }: { userName: string }) {
               <input
                 type="text"
                 name="fullName"
-                className="w-1/2 p-3 rounded-md bg-zinc-800"
+                className="w-full p-3 rounded-md bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" //w-1/2
                 defaultValue={userName}
                 placeholder="Your name"
                 maxLength={64}
@@ -71,3 +71,5 @@ export default function NameForm({ userName }: { userName: string }) {
     </div>
   );
 }
+
+// className="w-1/2 p-3 rounded-md bg-zinc-800"
