@@ -9,24 +9,26 @@ export default async function Page() {
     data: { user }
   } = await supabase.auth.getUser();
 
-  const { data: userDetails } = await supabase
-    .from('users')
-    .select('*')
-    .single();
-
   if (!user) {
     return redirect('/signin');
   }
 
+  //users query
+  let { data: users } = await supabase.from('users').select('*');
+
+  // console.log(user);
+  // console.log('Users query ', users); //Prices database query example
+
   return (
-    <section className="flex text-center mt-6 text-black">
-      {/* Add flex here to work */}
-      <Sidebar />
+    <div className="flex text-black">
+      <div className="flex text-center">
+        <Sidebar />
+      </div>
       <div className="ml-5">
         <p>Dashboard</p>
         {user && <p>Hi, {user.user_metadata.full_name}. How are you today?</p>}
         {user && <p>Your email: {user.email}</p>}
       </div>
-    </section>
+    </div>
   );
 }

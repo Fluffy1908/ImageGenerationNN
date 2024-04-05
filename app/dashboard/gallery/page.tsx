@@ -1,11 +1,14 @@
 import Sidebar from '@/components/ui/Sidebar/Sidebar';
 
-export default function Page() {
+export default async function Page() {
   return (
-    <section className="flex min-h-screen text-center text-black">
-      {/* Add flex here to work */}
-      <Sidebar />
-      <p>This is photo gallry page</p>
+    <section className="flex text-black">
+      <div className="flex text-center">
+        <Sidebar />
+      </div>
+      <div className="ml-5">
+        <p>Gallery</p>
+      </div>
     </section>
   );
 }

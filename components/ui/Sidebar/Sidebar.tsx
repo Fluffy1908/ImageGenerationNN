@@ -47,20 +47,27 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen">
       <div
         className="bg-white transition-width duration-500 ease-in-out"
-        style={{ width: isOpen ? '220px' : '50px' }}
+        style={{
+          width: isOpen ? '220px' : '50px',
+          boxShadow:
+            '8px 0 15px -3px rgba(0, 0, 0, 0.1), 4px 0 6px -2px rgba(0, 0, 0, 0.05)'
+        }}
       >
-        <nav className="mt-3 overflow-hidden">
+        <nav className="overflow-hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="transition transform hover:scale-110 duration-300"
+            aria-expanded={isOpen}
           >
             {isOpen ? (
-              <X className="w-7 h-7" color="#0096FF" />
+              // Moved `ml-auto` to `mr-auto` to align the icon to the left when sidebar is open
+              <X className="w-7 h-7 " color="#0096FF" />
             ) : (
-              <ArrowRightFromLine className="w-7 h-7" color="#0096FF" />
+              // Aligns the icon to the left when sidebar is closed
+              <ArrowRightFromLine className="w-7 h-7 " color="#0096FF" />
             )}
           </button>
           <div>
